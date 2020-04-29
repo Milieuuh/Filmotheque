@@ -4,7 +4,7 @@ include('header.php');
 
 ///LECTURE
 
-    $sql = "SELECT nomFilm, descriptionFilm, anneeSortie, duree, noteFilm from film";
+    $sql = "SELECT film.nomFilm, film.descriptionFilm, film.anneeSortie, film.duree, film.noteFilm, Realisateur.prenomRealisateur ,Realisateur.nomRealisateur from film JOIN RealiserFilm ON Film.idFilm= RealiserFilm.idFilm JOIN Realisateur ON RealiserFilm.idRealisateur = Realisateur.idRealisateur";
    
     $result = $conn->query($sql);
 
@@ -16,6 +16,8 @@ include('header.php');
         while($row = $result->fetch_assoc()) 
         {
     
+            $personnes['nomRealisateur']=$row['nomRealisateur'];            
+            $personnes['prenomRealisateur']=$row['prenomRealisateur'];
             $personnes['nomFilm']=$row['nomFilm'];
             $personnes['descriptionFilm']=$row['descriptionFilm'];
             $personnes['anneeSortie']=$row['anneeSortie'];
