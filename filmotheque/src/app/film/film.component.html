@@ -1,0 +1,19 @@
+<div class="container">
+  <h1>Filmothèque</h1>    
+</div>
+
+<div class="container">
+    
+  <div class="row">    
+      <div class="col-sm" *ngFor="let p of listeP">
+         
+          <h4>{{p.nom}}</h4>          
+          <p>{{p.description}}</p>        
+          <p>{{p.note}}/5</p>
+
+          
+      </div>
+      <br/>       
+      
+  </div>
+</div>

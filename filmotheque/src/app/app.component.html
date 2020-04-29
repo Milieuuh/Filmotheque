@@ -1,0 +1,29 @@
+
+<div class="container">
+  <h1>Filmothèque</h1>    
+</div>
+
+<form>
+  RECHERCHER UN FILM : <br/>
+  ------------------------------------------- <br/>
+  Titre : <input type='text' name='titre' /><br/>
+ 
+  <Button type='rechercherFilmPrecisFromServer($event)' name='submit' value='OK'>Ok</Button>
+
+</form>
+
+<div class="container">
+    
+  <div class="row">    
+      <div class="col-sm" *ngFor="let p of listeP">
+         
+          <h4>{{p.nomFilm}}</h4>          
+          <p>{{p.descriptionFilm}}</p>        
+          <p>{{p.noteFilm}}/5</p>
+
+          
+      </div>
+      <br/>       
+      
+  </div>
+</div>
